@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estils.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estils.css">
+    <title>Formulari i validació</title>
+</head>
+<body>
+<form class="formulari">
+    <div>
+    <div class="camp">/*Nom complet (text, amb pattern + title)*/
+        <input type="text" id="nom" name="nom" placeholder=" " required>
+        <label class="floating" for="nom">Nom complet</label>
+        <span class="avís">El nom és obligatori.</span>
+    </div>
+    <div class="camp">/*Correu electrònic (type="email", required)*/
+        <input type="email" id="correu" name="correu" placeholder=" " required>
+        <label class="floating" for="correu">Correu electrònic</label>
+        <span class="avís">Introdueix un correu vàlid.</span>
+    </div>
+    <div class="camp">/*Telèfon (type="tel" amb pattern)*/
+        <input type="tel" id="telefon" name="telefon" placeholder=" " required pattern="^[0-9]{9}$" 
+         title="Introdueix 9 dígits sense espais.">
+        <label class="floating" for="tel">tel</label>
+        <p class="error">El telèfon ha de tenir exactament 9 dígits.</p>
+    </div>   
+    <div class="camp">/*Edat (type="number" amb min, max, step)*/
+        <input type="number" id="edat" name="edat" placeholder=" " min="0" max="120" required>
+        <label class="floating" for="edat">Edat</label>
+        <span class="avís">L’edat ha d’estar entre 0 i 120 anys.</span>
+    </div>
+    <div class="camp">/*Data (type="number" amb min, max, step)*/
+        <input type="date" id="date" name="date" placeholder=" " min="0" max="120" required>
+        <label class="floating" for="date">date</label>
+        <span class="avís">date ha d’estar entre 00- i 120 anys.</span>
+    </div>    
+        
+        Data de naixement (type="date")
+        Franja horària (type="time" o datetime-local)
+        Color preferit (type="color")
+        Control lliscant (type="range")
+        Aficions (checkbox múltiple)
+        Nivell d’estudis (radio)
+        País (<select> + <option>)
+        Comentaris (<textarea>)
+        Enviar i esborrar (submit i reset)
+    </div>
+    <button type="submit">Enviar</button>
+</form>   
+</body>
+</html>
