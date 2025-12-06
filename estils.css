@@ -6,22 +6,23 @@
 
 /*cuerpo general*/
 body {
-    display: flex;
-    background-color: aqua;
-    height: 165vh;
-    justify-content: center;
+  display: flex;
+  background-color: aqua;
+  height: 180vh;
+  justify-content: center;
 }
 h1{
-    background-color: aliceblue;
-    border-radius: 30px;
-    text-decoration:underline;
-    text-align: center;
+  color: #af1ad0;
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  text-decoration:underline;
+  text-align: center;
 }
 
 /*formularios*/
 .camp {
-    margin-bottom: 25px;
-    position:relative;
+  margin-bottom: 35px;
+  position:relative;
 }
 /* Inputs, textarea i select */
 .camp textarea,
@@ -145,9 +146,10 @@ button:hover {
 
 /* Layout general */
 body {
+  background-image: url("img/arte-tim-burton.png"); /* posa aquí la ruta de la teva imatge */
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  background: #f0f8ff;
+  background: #030304;
   display: flex;
   flex-direction: column;
   align-items: center;
