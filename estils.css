@@ -1,6 +1,6 @@
 :root {
     --colorPrincipal: #e31717;
-    --colorPrincipalHover: #af1ad0;
+    --colorPrincipalHover: #f7d4ff;
     --colorText: rgb(9, 251, 9);
 }
 
@@ -23,11 +23,10 @@ body::before {
   position: absolute;
   inset: 0; /* ocupa tota la pantalla */
   background-color: rgba(0,0,0,0.5); /* negre semitransparent */
-  z-index: -5; /* queda darrere del contingut */
+  z-index: -10; /* queda darrere del contingut */
 }
 h1{
   color: #af1ad0;
-  /*background-color: rgb(0, 0, 0);*/
   border-radius: 30px;
   text-decoration:underline;
   text-align: center;
