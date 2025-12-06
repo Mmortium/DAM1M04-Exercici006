@@ -6,10 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estils.css">
     <title>Formulari i validació</title>
 </head>
-    <body>
+    <body style="background-color: rgb(255, 248, 248);">
 
         <nav class="navbar">
             <input type="checkbox" id="menu-toggle">
@@ -20,12 +19,13 @@
             </ul>
         </nav>
         <form class="formulari">
-            <div>
+            <div style="color:rgb(255, 255, 255);">
                 <div>
-                    <h1 style="color:rgb(0, 0, 0);background-color:turquoise;">OMPLE LES DADES</h1>
+                    <h1 style="color:rgb(128, 0, 255);">OMPLE LES DADES</h1>
                 </div>
                 <div class="camp"><!--Nom complet (text, amb pattern + title)-->
-                    <input type="text" id="nom" name="nom" placeholder=" " required>
+                    <input type="text" id="nom" name="nom" placeholder=" " required
+                     pattern="^[A-Za-zÀ-ÿ\s]+$" title="Nom i cognoms amb lletres.">
                     <label class="floating" for="nom">Nom complet</label>
                     <span class="avís">El nom és obligatori.</span>
                 </div>
@@ -79,9 +79,9 @@
                 </div> 
                 <h3>Nivell d’estudis</h3>
                 <div class="grup">
-                    <label><input type="radio" name="estudis" value="eso" required> ESO</label>
-                    <label><input type="radio" name="estudis" value="batxillerat"> Batxillerat</label>
-                    <label><input type="radio" name="estudis" value="fp"> Formació Professional</label>
+                    <label ><input type="radio" name="estudis" value="eso" required> ESO</label>
+                    <label ><input type="radio" name="estudis" value="batxillerat"> Batxillerat</label>
+                    <label ><input type="radio" name="estudis" value="fp"> Formació Professional</label>
                     <label><input type="radio" name="estudis" value="universitat"> Universitat</label>
                 </div>    
                 <div class="camp"><!--País (<select> + <option>)-->
@@ -94,11 +94,11 @@
                 </select>
                 <label class="floating fixed" for="provincia">País</label>
                 </div>   
-                <h3>Aficions</h3>
+                <h3 style="color:red;">Aficions</h3>
                 <div class="grup">
-                    <label><input type="checkbox" name="aficions" value="musica"> 🎵 Música</label>
-                    <label><input type="checkbox" name="aficions" value="esport"> ⚽ Esport</label>
-                    <label><input type="checkbox" name="aficions" value="lectura"> 📚 Lectura</label>
+                    <label style="color:red;"><input type="checkbox" name="aficions" value="musica"> 🎵 Música</label>
+                    <label style="color:red;"><input type="checkbox" name="aficions" value="esport"> ⚽ Esport</label>
+                    <label style="color:red;"><input type="checkbox" name="aficions" value="lectura"> 📚 Lectura</label>
                 </div>
                 <div class="camp"><!--Comentaris (<textarea>)-->
                     <textarea id="comentaris" name="comentaris" placeholder=" " rows="4" required></textarea>

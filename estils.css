@@ -1,19 +1,33 @@
 :root {
-    --colorPrincipal: #394853;
+    --colorPrincipal: #e31717;
     --colorPrincipalHover: #af1ad0;
-    --colorText: #474;
+    --colorText: rgb(9, 251, 9);
 }
 
 /*cuerpo general*/
-body {
+body{
   display: flex;
-  background-color: aqua;
-  height: 180vh;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /*img de fons*/
+  background-image: url("assets/img/arte - copia.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* ocupa tota la pantalla */
+  background-color: rgba(0,0,0,0.5); /* negre semitransparent */
+  z-index: -5; /* queda darrere del contingut */
 }
 h1{
   color: #af1ad0;
-  background-color: rgb(0, 0, 0);
+  /*background-color: rgb(0, 0, 0);*/
   border-radius: 30px;
   text-decoration:underline;
   text-align: center;
@@ -27,8 +41,8 @@ h1{
 /* Inputs, textarea i select */
 .camp textarea,
 .camp select {
-  background-color: #fff;
-  border: 2px solid #ccc;
+  background-color: #6b1b8e;
+  border: 2px solid #f90707;
   border-radius: 6px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
@@ -65,7 +79,7 @@ h1{
   appearance: none;
   background-image:
     linear-gradient(45deg, transparent 50%, #888 50%),
-    linear-gradient(135deg, #888 50%, transparent 50%),
+    linear-gradient(135deg, #f30202 50%, transparent 50%),
     linear-gradient(to right, transparent, transparent);
   background-position:
     calc(100% - 18px) calc(50% - 3px),
@@ -85,15 +99,15 @@ h1{
 .ajuda {
   margin-top: 6px;
   font-size: 13px;
-  color: #666;
+  color: #ff0000;
 }
 
 
 /* Label flotant */
 .floating {
-  background: turquoise;
-  border-radius: 12px;
-  color: #000000;
+  background: rgb(31, 11, 11);
+  border-radius: 1px 1px 1px px;
+  color: #f60202;
   font-size: 12px;
   left: 10px;
   padding:  px;
@@ -105,13 +119,13 @@ h1{
 /* Label fix per als SELECT — sempre flotant */
 .floating.fixed {
   color: var(--colorPrincipal);
-  background-color: turquoise;
+  /*background-color: turquoise;*/
   font-size: 12px;
   top: -20px;
 }
 
 form.formulari {
-    background: turquoise;
+    /*background: turquoise;*/
     border-radius: 10px;
     box-shadow: #344434;
     padding: 30px 40px
@@ -140,22 +154,24 @@ button:hover {
     background: var(--colorPrincipalHover);
 }
 :root {
-  --colorPrincipal: #394853;
+  --colorPrincipal: #6c12c0;
   --colorHover: #af1ad0;
 }
 
 /* Layout general */
 body {
-  background-image: url("img/arte-tim-burton.png"); /* posa aquí la ruta de la teva imatge */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  background: #030304;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+ 
 
-/* 🔝 Navbar */
+/* top Navbar */
 .navbar {
   position: sticky;
   top: 0;
@@ -164,6 +180,7 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
+  opacity: 0.6;
 }
 
 .navbar .menu {
@@ -176,7 +193,7 @@ body {
 }
 
 .navbar .menu li a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 10px;
   transition: background 0.3s;
@@ -191,7 +208,7 @@ body {
 .menu-icon {
   display: none;
   font-size: 24px;
-  color: white;
+  color: rgb(144, 36, 36);
   cursor: pointer;
 }
 
@@ -220,65 +237,70 @@ body {
   to {opacity: 1;}
 }
 
-/* 2️⃣ Pestanyes */
+/* 2️ Pestanyes */
 .tabs {
+  text-align: center;
   margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.tabs input[type="radio"] {
-  display: none;
+.tabs input {
+  display: none; /* amaguem els radios */
 }
 
 .tabs label {
-  background: var(--colorPrincipal);
+  background: #2c1c1c;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;
   margin: 5px;
-  cursor: pointer;
   border-radius: 6px;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
 .tabs label:hover {
-  background: var(--colorHover);
+  background: #555;
 }
 
 .content {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  display: none; /* per defecte ocult */
   margin-top: 20px;
   padding: 20px;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 0 5px #ccc;
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+}
+
+/* Quan el radio està seleccionat, mostrem el bloc corresponent */
+#tab1:checked ~ .content-1 {
+  display: block;
+}
+
+#tab2:checked ~ .content-2 {
+  display: block;
 }
 
 /* Mostrar contingut actiu amb :has() */
 #pagina-interaccio:has(#tab1:checked) .content-1 {
   display: block;
-  background: #d1f7c4; /* verd suau */
+  background-image:url("assets/img/fantasmas.png"); /* verd suau */
 }
 #pagina-interaccio:has(#tab2:checked) .content-2 {
   display: block;
-  background: #ffe0b2; /* taronja suau */
+  background-image:url("assets/img/payaso.png"); /* taronja suau */
 }
 /*carrusel amb radio i slide*/
-.carousel { width: 300px; overflow: hidden; margin: 20px auto; }
+.carousel { width: 300px; height: 300px; overflow: hidden; margin: 80px auto; }
 .slides { display: flex; transition: transform 0.5s ease; }
-.slide { min-width: 300px; height: 150px; background: lightblue; display:flex;align-items:center;justify-content:center; }
-.controls { text-align: center; margin-top: 10px; }
+.slide { min-width: 300px; height: 150px; display:flex;align-items:center;justify-content:center; }
+.controls { text-align: center; margin-top: 20px; }
 .controls label { cursor: pointer; font-size: 20px; padding: 5px; }
 #slide1:checked ~ .slides { transform: translateX(0); }
 #slide2:checked ~ .slides { transform: translateX(-300px); }
 #slide3:checked ~ .slides { transform: translateX(-600px); }
 
-/* 3️⃣ Flip card */
+/* 3️ Flip card */
 .flip-card {
-  margin: 30px;
+  margin: 200px;
+  width: 300px;
   perspective: 1000px;
   text-align: center;
 }
@@ -286,12 +308,10 @@ body {
 .flip-label {
   display: inline-block;
   margin-bottom: 10px;
-  background: var(--colorPrincipal);
-  color: white;
+  background: #333;
   padding: 8px 16px;
   border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
+  color:aliceblue;
 }
 
 .flip-label:hover {
@@ -299,8 +319,8 @@ body {
 }
 
 .card {
-  width: 200px;
-  height: 120px;
+  width: 300px;
+  height: 200px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
@@ -309,22 +329,18 @@ body {
 .card .front,
 .card .back {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  font-weight: bold;
+  
 }
-
-.card .front {
-  background: lightblue;
+.front img, .back img {
+  width: 110%;
+  height: 200%;
+  object-fit: cover;
 }
 
 .card .back {
-  background: lightcoral;
   transform: rotateY(180deg);
 }
 
