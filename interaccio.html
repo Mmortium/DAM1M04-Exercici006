@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactivitat amb CSS</title>
+    <link rel="stylesheet" href="estils.css">
 </head>
-<body>
-    
-</body>
+    <body id="pagina-interaccio">
+
+            <!-- 🔝 Navbar -->
+        <nav class="navbar">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <ul class="menu">
+            <li><a href="index.html">Formulari</a></li>
+            <li><a href="interaccio.html">Interactivitat</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Interactivitat amb CSS</h1>
+
+            <!-- 2️⃣ Pestanyes -->
+            <section class="tabs">
+            <input type="radio" id="tab1" name="tab" checked>
+            <label for="tab1">📚 Aprendre</label>
+
+            <input type="radio" id="tab2" name="tab">
+            <label for="tab2">🎮 Jugar</label>
+
+            <div class="content content-1">
+                <p>Contingut de la pestanya 1.</p>
+                <img src="img/aprendre.png" alt="Aprendre" width="100">
+            </div>
+            <div class="content content-2">
+                <p>Contingut de la pestanya 2.</p>
+                <img src="img/jugar.png" alt="Jugar" width="100">
+            </div>
+            </section>
+
+            <section class="carousel">
+                <input type="radio" id="slide1" name="slider" checked>
+                <input type="radio" id="slide2" name="slider">
+                <input type="radio" id="slide3" name="slider">
+
+                <div class="slides">
+                    <div class="slide">Imatge 1</div>
+                    <div class="slide">Imatge 2</div>
+                    <div class="slide">Imatge 3</div>
+                </div>
+
+                <div class="controls">
+                    <label for="slide1">🤡</label>
+                    <label for="slide2">👻</label>
+                    <label for="slide3">🤖</label>
+                </div>
+            </section>
+
+            <!-- 3️⃣ Component extra: Flip card -->
+            <section class="flip-card">
+            <input type="checkbox" id="flip">
+            <label for="flip" class="flip-label">Gira la targeta</label>
+            <div class="card">
+                <div class="front">Front</div>
+                <div class="back">Back</div>
+            </div>
+            </section>
+        </main>
+    </body>    
 </html>

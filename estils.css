@@ -1,6 +1,6 @@
 :root {
     --colorPrincipal: #394853;
-    --colorPrincipalHover: #344434;
+    --colorPrincipalHover: #af1ad0;
     --colorText: #474;
 }
 
@@ -8,7 +8,7 @@
 body {
     display: flex;
     background-color: aqua;
-    height: 180vh;
+    height: 165vh;
     justify-content: center;
 }
 h1{
@@ -93,13 +93,13 @@ h1{
   background: turquoise;
   border-radius: 12px;
   color: #000000;
-  font-size: 14px;
+  font-size: 12px;
   left: 10px;
-  padding:  2px;
-  pointer-events: none;
+  padding:  px;
+  pointer-events:none;
   position:absolute;
   top: -20px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 /* Label fix per als SELECT — sempre flotant */
 .floating.fixed {
@@ -111,12 +111,12 @@ h1{
 
 form.formulari {
     background: turquoise;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: #344434;
     padding: 30px 40px
 }
 .grup {
-    margin-bottom: 25;
+    margin-bottom: 30px;
     position:relative;
 }
 
@@ -137,4 +137,195 @@ button {
 
 button:hover {
     background: var(--colorPrincipalHover);
+}
+:root {
+  --colorPrincipal: #394853;
+  --colorHover: #af1ad0;
+}
+
+/* Layout general */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  background: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔝 Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--colorPrincipal);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar .menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.navbar .menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.navbar .menu li a:hover {
+  background: var(--colorHover);
+  border-radius: 4px;
+}
+
+/* Toggle mòbil */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: var(--colorPrincipal);
+    width: 100%;
+  }
+  #menu-toggle:checked ~ .menu {
+    display: flex;
+    animation: fadeIn 0.5s;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* 2️⃣ Pestanyes */
+.tabs {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs label {
+  background: var(--colorPrincipal);
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.tabs label:hover {
+  background: var(--colorHover);
+}
+
+.content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+/* Mostrar contingut actiu amb :has() */
+#pagina-interaccio:has(#tab1:checked) .content-1 {
+  display: block;
+  background: #d1f7c4; /* verd suau */
+}
+#pagina-interaccio:has(#tab2:checked) .content-2 {
+  display: block;
+  background: #ffe0b2; /* taronja suau */
+}
+/*carrusel amb radio i slide*/
+.carousel { width: 300px; overflow: hidden; margin: 20px auto; }
+.slides { display: flex; transition: transform 0.5s ease; }
+.slide { min-width: 300px; height: 150px; background: lightblue; display:flex;align-items:center;justify-content:center; }
+.controls { text-align: center; margin-top: 10px; }
+.controls label { cursor: pointer; font-size: 20px; padding: 5px; }
+#slide1:checked ~ .slides { transform: translateX(0); }
+#slide2:checked ~ .slides { transform: translateX(-300px); }
+#slide3:checked ~ .slides { transform: translateX(-600px); }
+
+/* 3️⃣ Flip card */
+.flip-card {
+  margin: 30px;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.flip-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  background: var(--colorPrincipal);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.flip-label:hover {
+  background: var(--colorHover);
+}
+
+.card {
+  width: 200px;
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.card .front {
+  background: lightblue;
+}
+
+.card .back {
+  background: lightcoral;
+  transform: rotateY(180deg);
+}
+
+#flip:checked ~ .card {
+  transform: rotateY(180deg);
 }

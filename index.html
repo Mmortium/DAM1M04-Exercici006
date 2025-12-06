@@ -9,96 +9,105 @@
     <link rel="stylesheet" href="estils.css">
     <title>Formulari i validació</title>
 </head>
-<body>
-<form class="formulari">
-    <div>
-    <div>
-        <h1>OMPLE LES DADES</h1>
-    </div>
-    <div class="camp"><!--Nom complet (text, amb pattern + title)-->
-        <input type="text" id="nom" name="nom" placeholder=" " required>
-        <label class="floating" for="nom">Nom complet</label>
-        <span class="avís">El nom és obligatori.</span>
-    </div>
-    <div class="camp"><!--Correu electrònic (type="email", required)-->
-        <input type="email" id="correu" name="correu" placeholder=" " required>
-        <label class="floating" for="correu">Correu electrònic</label>
-        <span class="avís">Introdueix un correu vàlid.</span>
-    </div>
-    <div class="camp"><!--Telèfon (type="tel" amb pattern)-->
-        <input type="tel" id="telefon" name="telefon" placeholder=" " required pattern="^[0-9]{9}$" 
-         title="Introdueix 9 dígits sense espais.">
-        <label class="floating" for="tel">tel</label>
-        <p class="error">El telèfon ha de tenir exactament 9 dígits.</p>
-    </div>   
-    <div class="camp"><!--Edat (type="number" amb min, max, step)-->
-        <input type="number" id="edat" name="edat" placeholder=" " min="0" max="120" required>
-        <label class="floating" for="edat">Edat</label>
-        <span class="avís">L’edat ha d’estar entre 0 i 120 anys.</span>
-    </div>
-    <div class="camp"><!--Data (type="number" amb min, max, step)-->
-        <input type="date" id="date" name="date" placeholder=" " min="0" max="120" required>
-        <label class="floating" for="date">date</label>
-        <span class="avís">date ha d’estar entre 00- i 120 anys.</span>
-    </div> 
-        <div class="camp"><!--Data de naixement (type="date")-->
-        <label class="fixedLabel" for="naixement">Data de naixement</label>
-        <input type="date" id="naixement" name="naixement">
-    </div>   
-    <div class="camp"><!--Franja horària (type="time" o datetime-local)-->
-        <label class="fixedLabel" for="cita">Data i hora</label>
-        <input type="datetime-local" id="cita" name="cita">
-    </div>    
-    <div class="camp"><!--Color preferit (type="color")-->
-        <label class="fixedLabel" for="color_preferit">Color preferit<br/></label>
-        <input type="color" id="color_preferit" name="color_preferit">
-    </div>   
-    <div class="camp"><!--Control lliscant (type="range")-->
-        <label class="fixedLabel" for="volum">Volum</label>
-        <input type="range"id="volum"name="volum"min="0"max="100"value="50">
-    </div>    
-    <div class="camp"><!--Aficions (checkbox múltiple)-->
-    <select id="aficionsMulti" name="aficionsMulti" multiple required size="5">
-        <option value="musica">🎵 Música</option>
-        <option value="esport">⚽ Esport</option>
-        <option value="lectura">📚 Lectura</option>
-        <option value="videojocs">🎮 Videojocs</option>
-        <option value="cinema">🎬 Cinema</option>
-    </select>
-    <label class="floating fixed" for="aficionsMulti">Aficions (Ctrl o Cmd per múltiples)</label>
-    <p class="ajuda">Mantén premut Ctrl (Windows) o Cmd (Mac) per seleccionar diverses opcions.</p>
-    </div> 
-    <h3>Nivell d’estudis</h3>
-    <div class="grup">
-        <label><input type="radio" name="estudis" value="eso" required> ESO</label>
-        <label><input type="radio" name="estudis" value="batxillerat"> Batxillerat</label>
-        <label><input type="radio" name="estudis" value="fp"> Formació Professional</label>
-        <label><input type="radio" name="estudis" value="universitat"> Universitat</label>
-    </div>    
-    <div class="camp"><!--País (<select> + <option>)-->
-    <select id="País" name="País" required>
-        <option value="" disabled selected hidden>Selecciona un País</option>
-        <option value="España">España</option>
-        <option value="Portugal">Portugal</option>
-        <option value="Francia">Francia</option>
-        <option value="Italia">Italia</option>
-    </select>
-    <label class="floating fixed" for="provincia">País</label>
-    </div>   
-    <h3>Aficions</h3>
-    <div class="grup">
-        <label><input type="checkbox" name="aficions" value="musica"> 🎵 Música</label>
-        <label><input type="checkbox" name="aficions" value="esport"> ⚽ Esport</label>
-        <label><input type="checkbox" name="aficions" value="lectura"> 📚 Lectura</label>
-    </div>
-    <div class="camp"><!--Comentaris (<textarea>)-->
-        <textarea id="comentaris" name="comentaris" placeholder=" " rows="4" required></textarea>
-        <label class="floating" for="comentaris">Comentaris</label>
-    </div>   
-        
-        
-    </div>
-    <button type="submit">Enviar i esborrar</button><!--Enviar i esborrar (submit i reset)-->
-</form>   
-</body>
+    <body>
+        <nav class="navbar">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <ul class="menu">
+            <li><a href="index.html">Formulari</a></li>
+            <li><a href="interaccio.html">Interactivitat</a></li>
+            </ul>
+        </nav>
+        <form class="formulari">
+            <div>
+            <div>
+                <h1>OMPLE LES DADES</h1>
+            </div>
+            <div class="camp"><!--Nom complet (text, amb pattern + title)-->
+                <input type="text" id="nom" name="nom" placeholder=" " required>
+                <label class="floating" for="nom">Nom complet</label>
+                <span class="avís">El nom és obligatori.</span>
+            </div>
+            <div class="camp"><!--Correu electrònic (type="email", required)-->
+                <input type="email" id="correu" name="correu" placeholder=" " required>
+                <label class="floating" for="correu">Correu electrònic</label>
+                <span class="avís">Introdueix un correu vàlid.</span>
+            </div>
+            <div class="camp"><!--Telèfon (type="tel" amb pattern)-->
+                <input type="tel" id="telefon" name="telefon" placeholder=" " required pattern="^[0-9]{9}$" 
+                title="Introdueix 9 dígits sense espais.">
+                <label class="floating" for="tel">tel</label>
+                <p class="error">El telèfon ha de tenir exactament 9 dígits.</p>
+            </div>   
+            <div class="camp"><!--Edat (type="number" amb min, max, step)-->
+                <input type="number" id="edat" name="edat" placeholder=" " min="0" max="120" required>
+                <label class="floating" for="edat">Edat</label>
+                <span class="avís">L’edat ha d’estar entre 0 i 120 anys.</span>
+            </div>
+            <div class="camp"><!--Data (type="number" amb min, max, step)-->
+                <input type="date" id="date" name="date" placeholder=" " min="0" max="120" required>
+                <label class="floating" for="date">date</label>
+                <span class="avís">date ha d’estar entre 00- i 120 anys.</span>
+            </div> 
+                <div class="camp"><!--Data de naixement (type="date")-->
+                <label class="fixedLabel" for="naixement">Data de naixement</label>
+                <input type="date" id="naixement" name="naixement">
+            </div>   
+            <div class="camp"><!--Franja horària (type="time" o datetime-local)-->
+                <label class="fixedLabel" for="cita">Data i hora</label>
+                <input type="datetime-local" id="cita" name="cita">
+            </div>    
+            <div class="camp"><!--Color preferit (type="color")-->
+                <label class="fixedLabel" for="color_preferit">Color preferit<br/></label>
+                <input type="color" id="color_preferit" name="color_preferit">
+            </div>   
+            <div class="camp"><!--Control lliscant (type="range")-->
+                <label class="fixedLabel" for="volum">Volum</label>
+                <input type="range"id="volum"name="volum"min="0"max="100"value="50">
+            </div>    
+            <div class="camp"><!--Aficions (checkbox múltiple)-->
+            <select id="aficionsMulti" name="aficionsMulti" multiple required size="5">
+                <option value="musica">🎵 Música</option>
+                <option value="esport">⚽ Esport</option>
+                <option value="lectura">📚 Lectura</option>
+                <option value="videojocs">🎮 Videojocs</option>
+                <option value="cinema">🎬 Cinema</option>
+            </select>
+            <label class="floating fixed" for="aficionsMulti">Aficions (Ctrl o Cmd per múltiples)</label>
+            <p class="ajuda">Mantén premut Ctrl (Windows) o Cmd (Mac) per seleccionar diverses opcions.</p>
+            </div> 
+            <h3>Nivell d’estudis</h3>
+            <div class="grup">
+                <label><input type="radio" name="estudis" value="eso" required> ESO</label>
+                <label><input type="radio" name="estudis" value="batxillerat"> Batxillerat</label>
+                <label><input type="radio" name="estudis" value="fp"> Formació Professional</label>
+                <label><input type="radio" name="estudis" value="universitat"> Universitat</label>
+            </div>    
+            <div class="camp"><!--País (<select> + <option>)-->
+            <select id="País" name="País" required>
+                <option value="" disabled selected hidden>Selecciona un País</option>
+                <option value="España">España</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Francia">Francia</option>
+                <option value="Italia">Italia</option>
+            </select>
+            <label class="floating fixed" for="provincia">País</label>
+            </div>   
+            <h3>Aficions</h3>
+            <div class="grup">
+                <label><input type="checkbox" name="aficions" value="musica"> 🎵 Música</label>
+                <label><input type="checkbox" name="aficions" value="esport"> ⚽ Esport</label>
+                <label><input type="checkbox" name="aficions" value="lectura"> 📚 Lectura</label>
+            </div>
+            <div class="camp"><!--Comentaris (<textarea>)-->
+                <textarea id="comentaris" name="comentaris" placeholder=" " rows="4" required></textarea>
+                <label class="floating" for="comentaris">Comentaris</label>
+            </div>   
+                
+                
+            </div>
+            <button type="submit">Enviar</button><!--Enviar i esborrar (submit i reset)-->
+            <button type="reset">Esborrar</button>
+        </form>   
+    </body>
 </html>
