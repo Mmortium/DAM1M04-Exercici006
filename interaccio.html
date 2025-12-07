@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estils.css">
 </head>
     <body id="pagina-interaccio">
-            <!-- 🔝 Navbar -->
+            <!-- top Navbar -->
         <nav class="navbar">
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">☰</label>
@@ -20,7 +20,7 @@
         <main>
             <h1>Interactivitat amb CSS</h1>
 
-            <!-- 2️⃣ Pestanyes -->
+            <!-- 2️ Pestanyes -->
             <section class="tabs">
             <input type="radio" id="tab1" name="tab" checked>
             <label for="tab1">📚 Aprendre</label>
@@ -28,10 +28,10 @@
             <input type="radio" id="tab2" name="tab">
             <label for="tab2">🎮 Jugar</label>
 
-            <div class="content content-1">
+            <div class="content content-4">
                 <p style="color:rgb(255, 5, 5)">VOLS APRENDRE AMB TIM</p>                
             </div>
-            <div class="content content-2">
+            <div class="content content-5">
                 <p style="color:rgb(255, 5, 5)">VOLS JUGAR AMB TIM</p>
             </div>
             </section>
@@ -54,7 +54,7 @@
                 </div>
             </section>
 
-            <!-- 3️⃣ Component extra: Flip card -->
+            <!-- 3️ Component extra: Flip card -->
             <section class="flip-card">
             <input type="checkbox" id="flip">
             <label for="flip" class="flip-label">Gira la targeta</label>
@@ -62,6 +62,39 @@
                 <div class="front"><img src="assets/img/batman - copia.jpg"></div>
                 <div class="back"><img src="assets/img/Star Wars - copia.jpg"></div>
             </div>
+            </section>
+            <section class="card">
+                <h2 style="color:rgb(254, 254, 254)">Mini‑joc: Tria el món Burton</h2>
+                <div class="burton-game">
+                    <!-- Radios i labels (ja existents) -->
+                    <input type="radio" id="burton1" name="burton" class="visually-hidden" checked />
+                    <label for="burton1">🎃 Nightmare</label>
+
+                    <input type="radio" id="burton2" name="burton" class="visually-hidden" />
+                    <label for="burton2">🦇 Beetlejuice</label>
+
+                    <input type="radio" id="burton3" name="burton" class="visually-hidden" />
+                    <label for="burton3">🕯️ Corpse Bride</label>
+
+                    <!-- Panell amb contingut i aranya integrada -->
+                    <div class="burton-panel">
+                        <div class="spider-web"></div>
+                        <div class="spider"></div>
+
+                        <div class="burton-content content-1">
+                        <h3>🎃 Nightmare Before Christmas</h3>
+                        <p>Un món de carbasses, esquelets i música fosca.</p>
+                        </div>
+                        <div class="burton-content content-2">
+                        <h3>🦇 Beetlejuice</h3>
+                        <p>Ratlles blanques i negres, humor excèntric i caos.</p>
+                        </div>
+                        <div class="burton-content content-3">
+                        <h3>🕯️ Corpse Bride</h3>
+                        <p>Un amor etern entre ombres i llum de lluna.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </body>    
