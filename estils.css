@@ -152,6 +152,10 @@ button {
 button:hover {
     background: var(--colorPrincipalHover);
 }
+/* Footer */
+.footer {
+  padding:2rem; text-align: center; color: #64748b;
+}
 :root {
   --colorPrincipal: #6c12c0;
   --colorHover: #af1ad0;
@@ -278,18 +282,23 @@ body {
 }
 
 /* Mostrar contingut actiu amb :has() */
-#pagina-interaccio:has(#tab1:checked) .content-1 {
+#pagina-interaccio:has(#tab1:checked) .content-4 {
   display: block;
-  background-image:url("assets/img/fantasmas.png"); /* verd suau */
+  position:center;
+  width:200px;
+  height: 300px;
+  background-image:url("assets/img/fantasmas.png"); 
 }
-#pagina-interaccio:has(#tab2:checked) .content-2 {
+#pagina-interaccio:has(#tab2:checked) .content-5 {
   display: block;
-  background-image:url("assets/img/payaso.png"); /* taronja suau */
+  width:500px;
+  height: 400px;
+  background-image:url("assets/img/payaso.png");
 }
 /*carrusel amb radio i slide*/
 .carousel { width: 300px; height: 300px; overflow: hidden; margin: 80px auto; }
 .slides { display: flex; transition: transform 0.5s ease; }
-.slide { min-width: 300px; height: 150px; display:flex;align-items:center;justify-content:center; }
+.slide { min-width: 300px; height: 200px; display:flex;align-items:center;justify-content:center; }
 .controls { text-align: center; margin-top: 20px; }
 .controls label { cursor: pointer; font-size: 20px; padding: 5px; }
 #slide1:checked ~ .slides { transform: translateX(0); }
@@ -298,7 +307,7 @@ body {
 
 /* 3️ Flip card */
 .flip-card {
-  margin: 200px;
+  margin: 100px;
   width: 300px;
   perspective: 1000px;
   text-align: center;
@@ -319,8 +328,8 @@ body {
 
 .card {
   width: 300px;
-  height: 200px;
-  position: relative;
+  height: 300px;
+  position:sticky;
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
@@ -334,8 +343,8 @@ body {
   
 }
 .front img, .back img {
-  width: 110%;
-  height: 200%;
+  height: 80%;
+  position:center;
   object-fit: cover;
 }
 
@@ -346,3 +355,154 @@ body {
 #flip:checked ~ .card {
   transform: rotateY(180deg);
 }
+/* Mini-joc Burton */
+.burton-game {
+  display: flex;
+  height: 430px;
+  flex-direction:column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.burton-game label {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #fff;
+  cursor: pointer;
+  /*transition: background-color 200ms ease, transform 160ms ease;*/
+}
+.burton-game label:hover {
+  background: #334155;
+  /*transform: translateY(-2px);*/
+}
+
+.burton-content {
+  display: none;
+  margin-top: 1rem;
+  padding: 10rem;
+  border-radius: 12px;
+  color: #fff;
+  transition: background-color 400ms ease, transform 300ms ease;
+}
+
+/* Nightmare Before Christmas */
+#pagina-interaccio:has(#burton1:checked) .burton-content.content-1 {
+  display: block;
+  width:100px;
+  height: 200px;
+  background-image:url("assets/img/pesadillas.png");
+  /*background: linear-gradient(135deg, #111 40%, #f97316 100%);*/
+  transform: scale(1.05);
+}
+
+/* Beetlejuice */
+#pagina-interaccio:has(#burton2:checked) .burton-content.content-1 {
+  display: block;
+  width:10mm;
+  height: 1px;
+  background-image:url("assets/img/beattlejuice2.jpg");
+  /*background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 20px,
+    #fff 20px,
+    #fff 40px
+  );
+  color: #000;*/
+  transform: rotate(-3deg)scale(1.05);
+}
+
+/* Corpse Bride */
+#pagina-interaccio:has(#burton3:checked) .burton-content.content-1 {
+  display: block;
+  width:20px;
+  height: 30px;
+  background-image:url("assets/img/corpse.png");
+  /*background: linear-gradient(135deg, #1e3a8a, #64748b);*/
+  transform: scale(1.05);
+}
+
+/* Escena de l'aranya */
+.spider-scene {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(#0e45c7, #0d50bb);
+  overflow: hidden;
+  border-radius: 12px;
+}
+/*araña*/
+/* Tela (fil vertical) */
+.web {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #cbd5e1;
+}
+
+/* Aranya */
+/* Panell Burton amb aranya integrada */
+.burton-panel {
+  position: relative;
+  margin-top: 1rem;
+  padding: 5rem;
+  border-radius: 12px;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+/* Tela vertical */
+.spider-web {
+  position:absolute;
+  top: 0;
+  left: 10%;
+  width: 4px;
+  height: 100%;
+  background: #cbd5e1;
+}
+
+/* Aranya */
+.spider {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 30px;
+  height: 35px;
+  background: #d22020;
+  border-radius: 30%;
+  transform: translateX(90%);
+  transition: top 1.5s ease, left 1.5s ease;
+}
+.spider::before,
+.spider::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: #c81212;
+  top: 10px;
+  left: -5px;
+}
+.spider::after { top: 20px; }
+
+/* Posicions segons el món seleccionat */
+#pagina-interaccio:has(#burton1:checked) .spider {
+  left:0%; 
+  top: 1px; 
+}
+#pagina-interaccio:has(#burton2:checked) .spider {
+  left:0%;
+  top: 100px; 
+}
+#pagina-interaccio:has(#burton3:checked) .spider {
+   left:0%;
+  top: 200px; 
+}
+
+/* Continguts (ja existents) */
+.burton-content { display: none; color: #fff; }
+#pagina-interaccio:has(#burton1:checked) .content-1 { display: block; background: #111; }
+#pagina-interaccio:has(#burton2:checked) .content-2 { display: block; background: #fff; color:#000; }
+#pagina-interaccio:has(#burton3:checked) .content-3 { display: block; background: #1e3a8a; }
